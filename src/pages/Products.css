@@ -1,0 +1,63 @@
+/* --- Main Container for the Products Page --- */
+.products-page-container {
+  /* Generous padding at the top to clear the fixed header, and at the bottom */
+  padding: 8rem 2rem 4rem 2rem;
+  min-height: 100vh; /* Ensures the page takes at least the full screen height */
+  background-color: #FDFBF5; 
+}
+
+/* --- Page Title Styling --- */
+.products-page-title {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 4rem;
+  position: relative;
+  display: inline-block;
+  /* Centers the title block if it's shorter than the screen width */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* The same elegant underline effect used on the homepage for consistency */
+.products-page-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background-color: #D48C00; /* Uses the Saffron gold as a primary accent */
+  border-radius: 2px;
+}
+
+/* --- The Grid Layout for Product Cards --- */
+.products-page-grid {
+  display: grid;
+  /* This creates a responsive grid. Cards will be ~320px wide, and the browser will fit as many as it can per row. */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem; /* The space between the cards */
+  max-width: 1400px; /* Limits the maximum width of the grid on very large screens */
+  margin: 0 auto; /* Centers the grid on the page */
+}
+
+/* --- Responsive Adjustments for Mobile --- */
+@media (max-width: 768px) {
+  .products-page-container {
+    /* Reduce padding on smaller screens */
+    padding: 7rem 1.5rem 3rem 1.5rem;
+  }
+
+  .products-page-title {
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+  }
+
+  .products-page-grid {
+    /* On the smallest screens, reduce the minimum card width to ensure they fit well */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+}

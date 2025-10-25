@@ -1,0 +1,156 @@
+/* --- Base Header Styles --- */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    z-index: 1000; 
+    background-color: transparent; /* Fully transparent at the top */
+    /* Smooth transitions for all properties */
+    transition: background-color 0.4s ease, backdrop-filter 0.4s ease, border-bottom 0.4s ease, padding 0.4s ease;
+}
+
+/* --- THE NEW "FROSTED GLASS" SCROLLED STATE --- */
+.header.scrolled {
+    /* A semi-transparent white background that matches your light theme */
+    background-color: rgba(253, 251, 245, 0.75);
+    /* The key property for the blur effect */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* For Safari support */
+    /* A very subtle border to create separation from the content */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 1rem 2rem;
+}
+
+.logo a {
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 700;
+    /* CRUCIAL: Dark text to be visible on the light hero background */
+    color: #333;
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.main-nav ul li {
+    margin-left: 2.5rem;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    /* CRUCIAL: Dark text for links */
+    color: #5C5C5C;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+    /* Use the rich Saffron color as the hover accent */
+    color: #D48C00;
+}
+
+
+/* --- NEW ELEGANT MOBILE MENU --- */
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    z-index: 1002;
+}
+
+.hamburger .line {
+    width: 25px;
+    height: 3px;
+    /* CRUCIAL: Dark lines for the hamburger icon */
+    background-color: #333;
+    border-radius: 3px;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* Media Query for mobile devices */
+@media (max-width: 768px) {
+    .header { padding: 1rem 1.5rem; }
+    .header.scrolled { padding: 0.75rem 1.5rem; }
+
+    .main-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        /* THE FROSTED GLASS EFFECT for the mobile overlay */
+        background: rgba(253, 251, 245, 0.9);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1001; 
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+        transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+    }
+
+    .main-nav.open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .main-nav ul li {
+        margin: 2rem 0;
+    }
+
+    .main-nav ul li a {
+        font-size: 2rem;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    /* Animate hamburger to an 'X' with a dark color */
+    .header.menu-open .hamburger .line:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    .header.menu-open .hamburger .line:nth-child(2) {
+        opacity: 0;
+    }
+    .header.menu-open .hamburger .line:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+}
+/* Find this existing rule */
+.logo a {
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #333;
+    /* --- ADD THESE TWO LINES --- */
+    display: flex;       /* This enables flexbox alignment */
+    align-items: center; /* This vertically centers the logo and text */
+}
+
+/* --- ADD THIS ENTIRE NEW RULE --- */
+.logo a img {
+    height: 35px;         /* Controls the size of your logo */
+    margin-right: 10px;   /* Adds a nice space between the logo and the text */
+}

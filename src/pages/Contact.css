@@ -1,0 +1,92 @@
+.contact-page-container {
+    padding: 8rem 2rem 4rem 2rem;
+    min-height: 100vh;
+    background-color: #FDFBF5; /* Match the warm, light theme */
+}
+
+.contact-intro {
+    max-width: 800px;
+    margin: 0 auto 5rem auto;
+    text-align: center;
+}
+
+.contact-page-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.contact-intro p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #5C5C5C;
+}
+
+.contact-cards-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    /* Create a responsive grid for the cards */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.contact-card {
+    background: #FFFFFF;
+    border-radius: 15px;
+    padding: 2.5rem;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eee;
+}
+
+/* Make the cards lift up on hover */
+.contact-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Custom colors for each icon */
+.card-icon.whatsapp { color: #25D366; }
+.card-icon.email { color: #D44638; }
+.card-icon.location { color: #4285F4; }
+
+
+.contact-card h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.contact-card p {
+    line-height: 1.6;
+    color: #5C5C5C;
+    margin-bottom: 2rem;
+}
+
+.contact-link {
+    font-weight: 600;
+    color: #D48C00; /* Use the Saffron gold as an accent */
+    text-decoration: none;
+    display: inline-block;
+    transition: color 0.3s;
+}
+
+.contact-card:hover .contact-link {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .contact-cards-grid {
+        grid-template-columns: 1fr; /* Stack cards on mobile */
+    }
+}
