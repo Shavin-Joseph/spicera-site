@@ -18,21 +18,21 @@ const featuredProducts = [
     name: 'The gold of spice Premium Quality Negin Saffron', 
     image: '/saffron-hero.png', 
     accentColor: '#D48C00',
-  price: "Available Soon",
+  price: "2,450.00/1g",
     currency: 'Rs.'
   },
   { 
     name: 'Premium Quality Ceylon Black Pepper Powder', 
     image: '/pepper-hero.png', 
     accentColor: '#4A5568',
-  price: "Available Soon",
+  price: "195.00/50g",
     currency: 'Rs.'
   },
   { 
     name: 'Premium Quality Ceylon Cinnamon Powder', 
     image: '/cinnamon-hero.png', 
     accentColor: '#B85B14',
-  price: "Available Soon",
+  price: "385.00/50g",
     currency: 'Rs.'
   },
 ];
