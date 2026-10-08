@@ -4,15 +4,15 @@ import { getFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 import { getAnalytics, isSupported } from 'firebase/analytics';
 
-// Your web app's Firebase configuration
+// Web app Firebase configuration supporting both environment variables and fallback
 const firebaseConfig = {
-  apiKey: "AIzaSyARJWkZwfgT-7aE8vZqCYed4utut2pcKcM",
-  authDomain: "spicera-c0258.firebaseapp.com",
-  projectId: "spicera-c0258",
-  storageBucket: "spicera-c0258.firebasestorage.app",
-  messagingSenderId: "862806686",
-  appId: "1:862806686:web:e6b1ae2be974632749d18f",
-  measurementId: "G-PSWBYQD06F"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY || "AIzaSyARJWkZwfgT-7aE8vZqCYed4utut2pcKcM",
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN || "spicera-c0258.firebaseapp.com",
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID || "spicera-c0258",
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET || "spicera-c0258.firebasestorage.app",
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID || "862806686",
+  appId: process.env.REACT_APP_FIREBASE_APP_ID || "1:862806686:web:e6b1ae2be974632749d18f",
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID || "G-PSWBYQD06F"
 };
 
 // Initialize Firebase safely (avoid multi-instance re-init)
