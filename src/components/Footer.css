@@ -1,0 +1,149 @@
+.site-footer {
+  background-color: #242D38;
+  color: #B0B7C3;
+  padding: 4rem 2rem 1.75rem 2rem;
+  border-top: 1px solid #1A202C;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 260px;
+}
+
+.footer-section h2 {
+  color: #FFFFFF;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+
+.logo-text {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 0.8rem;
+}
+
+.footer-logo {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+}
+
+.footer-section.about p {
+  line-height: 1.6;
+  font-size: 0.92rem;
+  margin-bottom: 1.25rem;
+}
+
+.footer-whatsapp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(32, 198, 90, 0.12);
+  border: 1px solid rgba(32, 198, 90, 0.3);
+  padding: 8px 14px;
+  border-radius: 8px;
+  color: #48BB78;
+  font-size: 0.84rem;
+}
+
+.footer-wa-icon {
+  font-size: 1.1rem;
+}
+
+.footer-section.links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section.links ul li a {
+  color: #CBD5E0;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+  transition: color 0.25s ease;
+}
+
+.footer-section.links ul li a:hover {
+  color: #D48C00;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.contact-item .icon {
+  margin-right: 0.85rem;
+  margin-top: 3px;
+  color: #D48C00;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.footer-wa-link {
+  color: #48BB78;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.footer-wa-link:hover {
+  color: #68D391;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  margin-top: 3.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-bottom-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #718096;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo-text {
+    justify-content: center;
+  }
+
+  .contact-item {
+    justify-content: center;
+  }
+
+  .footer-bottom-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}

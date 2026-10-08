@@ -1,0 +1,211 @@
+/* --- Base Header Styles --- */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 2.5rem;
+  z-index: 1000;
+  background-color: transparent;
+  transition: background-color 0.4s ease, backdrop-filter 0.4s ease, border-bottom 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* --- FROSTED GLASS SCROLLED STATE --- */
+.header.scrolled {
+  background-color: rgba(253, 251, 245, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  padding: 0.85rem 2.5rem;
+}
+
+.logo a {
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #333333;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  letter-spacing: -0.5px;
+}
+
+.logo a img {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+}
+
+.logo a span {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: #2D3748;
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 2.2rem;
+}
+
+.main-nav ul li a {
+  text-decoration: none;
+  color: #4A5568;
+  font-weight: 600;
+  font-size: 0.98rem;
+  transition: color 0.25s ease;
+  position: relative;
+  padding: 4px 0;
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a.active-link {
+  color: #D48C00;
+}
+
+.main-nav ul li a.active-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #D48C00;
+  border-radius: 2px;
+}
+
+.mobile-admin-item {
+  display: none;
+}
+
+/* --- Header Action Icons --- */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-bag-btn {
+  position: relative;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: #2D3748;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+.header-bag-btn:hover {
+  border-color: #D48C00;
+  color: #D48C00;
+  transform: translateY(-2px);
+}
+
+.bag-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background-color: #D48C00;
+  color: #FFFFFF;
+  font-size: 0.72rem;
+  font-weight: 800;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #FFFFFF;
+}
+
+/* --- Hamburger for Mobile --- */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  padding: 6px;
+  z-index: 1002;
+}
+
+.hamburger .line {
+  width: 24px;
+  height: 2.5px;
+  background-color: #2D3748;
+  border-radius: 2px;
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 860px) {
+  .header {
+    padding: 1rem 1.5rem;
+  }
+  .header.scrolled {
+    padding: 0.75rem 1.5rem;
+  }
+
+  .main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(253, 251, 245, 0.96);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s;
+  }
+
+  .main-nav.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.8rem;
+  }
+
+  .main-nav ul li a {
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .header.menu-open .hamburger .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .header.menu-open .hamburger .line:nth-child(2) {
+    opacity: 0;
+  }
+  .header.menu-open .hamburger .line:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+}

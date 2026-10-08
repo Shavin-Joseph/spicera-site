@@ -1,0 +1,343 @@
+.admin-login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FDFBF5;
+  padding: 2rem 1.5rem;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.login-bg-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(#D48C0015 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.admin-login-card {
+  position: relative;
+  z-index: 2;
+  background: #FFFFFF;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 440px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(212, 140, 0, 0.15);
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.back-to-store-link {
+  position: absolute;
+  top: -10px;
+  left: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #718096;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s;
+}
+
+.back-to-store-link:hover {
+  color: #D48C00;
+}
+
+.shield-icon-badge {
+  width: 60px;
+  height: 60px;
+  background: #FFF8E7;
+  color: #D48C00;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin: 1.5rem auto 1rem auto;
+  box-shadow: 0 4px 15px rgba(212, 140, 0, 0.2);
+}
+
+.login-header h2 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #2D3748;
+  margin: 0 0 0.5rem 0;
+}
+
+.login-subtitle {
+  font-size: 0.88rem;
+  color: #718096;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.security-alert-box {
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1.25rem;
+  line-height: 1.4;
+}
+
+.security-alert-box.lockout {
+  background: #FFF5F5;
+  color: #C53030;
+  border: 1px solid #FEB2B2;
+}
+
+.security-alert-box.error {
+  background: #FFF5F5;
+  color: #E53E3E;
+  border: 1px solid #FED7D7;
+}
+
+.admin-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-field-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4A5568;
+  margin-bottom: 6px;
+}
+
+.password-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.password-label-row label {
+  margin-bottom: 0;
+}
+
+.forgot-password-link {
+  background: none;
+  border: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #B85B14;
+  cursor: pointer;
+  padding: 0;
+}
+
+.forgot-password-link:hover {
+  text-decoration: underline;
+}
+
+.input-with-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-with-icon .field-icon {
+  position: absolute;
+  left: 14px;
+  color: #A0AEC0;
+  font-size: 0.95rem;
+}
+
+.input-with-icon input {
+  width: 100%;
+  padding: 12px 14px 12px 42px;
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  background: #FAFAFA;
+  outline: none;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.input-with-icon input:focus {
+  border-color: #D48C00;
+  background: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(212, 140, 0, 0.15);
+}
+
+.toggle-password-btn {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: #A0AEC0;
+  cursor: pointer;
+  padding: 6px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.toggle-password-btn:hover {
+  color: #4A5568;
+}
+
+.login-submit-btn {
+  background: #D48C00;
+  color: #FFFFFF;
+  border: none;
+  padding: 13px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 0.5rem;
+  box-shadow: 0 4px 15px rgba(212, 140, 0, 0.35);
+  transition: all 0.25s ease;
+}
+
+.login-submit-btn:hover:not(:disabled) {
+  background: #BF7D00;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 140, 0, 0.45);
+}
+
+.login-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.spinner-inline {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #FFFFFF;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.login-footer-meta {
+  margin-top: 2rem;
+  text-align: center;
+  padding-top: 1.25rem;
+  border-top: 1px solid #EDF2F7;
+}
+
+.encryption-notice {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: #718096;
+  margin-bottom: 10px;
+}
+
+.safe-icon {
+  color: #20C65A;
+}
+
+.setup-toggle-row {
+  margin-top: 6px;
+}
+
+.setup-toggle-btn {
+  background: none;
+  border: none;
+  color: #B85B14;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.setup-toggle-btn:hover {
+  color: #8C440D;
+}
+
+/* Modal styles for reset password */
+.reset-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.reset-modal-content {
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.reset-modal-content h3 {
+  margin: 0 0 0.5rem 0;
+  color: #2D3748;
+}
+
+.reset-modal-content p {
+  color: #718096;
+  font-size: 0.88rem;
+  margin-bottom: 1.25rem;
+}
+
+.reset-status-box {
+  background: #EBF8FF;
+  color: #2B6CB0;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.reset-modal-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 1.25rem;
+}
+
+.reset-modal-actions button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.reset-modal-actions .cancel-btn {
+  background: #EDF2F7;
+  border: none;
+  color: #4A5568;
+}
+
+.reset-modal-actions .confirm-btn {
+  background: #D48C00;
+  border: none;
+  color: #FFFFFF;
+}

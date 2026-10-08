@@ -1,0 +1,287 @@
+.contact-page-container {
+  padding: 8rem 2rem 5rem 2rem;
+  min-height: 100vh;
+  background-color: #FDFBF5;
+  box-sizing: border-box;
+}
+
+.contact-intro {
+  max-width: 820px;
+  margin: 0 auto 3.5rem auto;
+  text-align: center;
+}
+
+.contact-eyebrow {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #D48C00;
+  margin-bottom: 0.5rem;
+}
+
+.contact-page-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #2D3748;
+  margin: 0 0 1.25rem 0;
+  position: relative;
+  display: inline-block;
+}
+
+.contact-page-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background-color: #D48C00;
+  border-radius: 2px;
+}
+
+.contact-intro p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #5C5C5C;
+  margin: 1.25rem 0 0 0;
+}
+
+.contact-cards-grid {
+  max-width: 1150px;
+  margin: 0 auto 3.5rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.contact-card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #EAE5D9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.contact-card.whatsapp-feature {
+  border-color: rgba(32, 198, 90, 0.4);
+  background: #FCFFF9;
+}
+
+.contact-card-icon-wrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  font-size: 1.8rem;
+}
+
+.contact-card-icon-wrap.whatsapp {
+  background: #E6F9ED;
+  color: #20C65A;
+}
+
+.contact-card-icon-wrap.email {
+  background: #FFF5F5;
+  color: #E53E3E;
+}
+
+.contact-card-icon-wrap.location {
+  background: #FFF8E7;
+  color: #D48C00;
+}
+
+.contact-card h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #2D3748;
+  margin: 0 0 0.75rem 0;
+}
+
+.contact-card p {
+  line-height: 1.6;
+  color: #718096;
+  font-size: 0.92rem;
+  margin: 0 0 1.5rem 0;
+}
+
+.contact-link {
+  font-weight: 700;
+  color: #D48C00;
+  font-size: 0.92rem;
+  margin-top: auto;
+}
+
+.contact-card:hover .contact-link {
+  text-decoration: underline;
+}
+
+.contact-address {
+  font-size: 0.88rem;
+  color: #4A5568;
+  line-height: 1.5;
+  margin-top: auto;
+}
+
+/* Quick Inquiry Box */
+.quick-inquiry-box {
+  max-width: 860px;
+  margin: 0 auto;
+  background: #FFFFFF;
+  border: 1px solid #EAE5D9;
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+}
+
+.inquiry-form-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 2rem;
+}
+
+.inquiry-wa-icon {
+  font-size: 2.5rem;
+  color: #20C65A;
+}
+
+.inquiry-form-header h3 {
+  margin: 0 0 4px 0;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #2D3748;
+}
+
+.inquiry-form-header p {
+  margin: 0;
+  color: #718096;
+  font-size: 0.9rem;
+}
+
+.inquiry-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.inquiry-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.inquiry-field.full-width {
+  grid-column: span 2;
+}
+
+.inquiry-field label {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #4A5568;
+  margin-bottom: 6px;
+}
+
+.inquiry-field input,
+.inquiry-field select,
+.inquiry-field textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 14px;
+  border: 1px solid #CBD5E0;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  background: #FAFAFA;
+  outline: none;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.inquiry-field input:focus,
+.inquiry-field select:focus,
+.inquiry-field textarea:focus {
+  border-color: #20C65A;
+  background: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(32, 198, 90, 0.15);
+}
+
+.inquiry-submit-btn {
+  grid-column: span 2;
+  background: #20C65A;
+  color: #FFFFFF;
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 4px 15px rgba(32, 198, 90, 0.35);
+  transition: all 0.25s;
+  margin-top: 0.5rem;
+}
+
+.inquiry-submit-btn:hover {
+  background: #1AA84C;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(32, 198, 90, 0.45);
+}
+
+.operating-hours-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 1.5rem;
+  font-size: 0.82rem;
+  color: #718096;
+}
+
+.clock-icon {
+  color: #D48C00;
+}
+
+@media (max-width: 768px) {
+  .contact-page-container {
+    padding: 6.5rem 1.25rem 3rem 1.25rem;
+  }
+
+  .contact-page-title {
+    font-size: 2.2rem;
+  }
+
+  .inquiry-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .inquiry-field.full-width {
+    grid-column: span 1;
+  }
+
+  .inquiry-submit-btn {
+    grid-column: span 1;
+  }
+
+  .quick-inquiry-box {
+    padding: 1.5rem;
+  }
+}
