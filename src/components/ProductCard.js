@@ -33,7 +33,11 @@ const ProductCard = ({ product }) => {
         <motion.div className="product-card" whileHover={{ y: -6 }}>
           <div
             className="product-card-accent"
-            style={{ backgroundColor: product.accentColor || '#D48C00' }}
+            style={{
+              background: product.accentColor && product.accentColor !== '#4A5568'
+                ? `linear-gradient(90deg, ${product.accentColor}, #D48C00)`
+                : 'linear-gradient(90deg, #D48C00, #E5A93C, #B85B14)'
+            }}
           />
 
           <div className="product-card-top-badges">

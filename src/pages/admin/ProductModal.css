@@ -412,7 +412,7 @@
 
 .mockup-img-wrap {
   height: 90px;
-  background: radial-gradient(circle at center, #FFFFFF 40%, #FAF7EE 100%);
+  background: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;

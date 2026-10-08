@@ -253,23 +253,6 @@
   color: #20C65A;
 }
 
-.setup-toggle-row {
-  margin-top: 6px;
-}
-
-.setup-toggle-btn {
-  background: none;
-  border: none;
-  color: #B85B14;
-  font-size: 0.82rem;
-  font-weight: 600;
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-.setup-toggle-btn:hover {
-  color: #8C440D;
-}
 
 /* Modal styles for reset password */
 .reset-modal-backdrop {

@@ -27,7 +27,7 @@ export const DEFAULT_PRODUCTS = [
     unit: '50g',
     currency: 'Rs.',
     image: '/pepper-hero.png',
-    accentColor: '#4A5568',
+    accentColor: '#B85B14',
     origin: 'Matale and Central Highlands, Sri Lanka',
     aroma: 'Pungent, Sharp Pine, Citrus Heat',
     description: 'Authentic high piperine Ceylon black pepper berries, freshly stone ground to unlock the pungent citrus notes and warm fiery kick that made Ceylon world renowned throughout the ancient spice routes.',

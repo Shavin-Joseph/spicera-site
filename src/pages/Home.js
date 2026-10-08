@@ -242,7 +242,7 @@ const Home = () => {
         variants={productSectionVariants}
       >
         <div className="section-header-wrap">
-          <span className="section-eyebrow">Artisanal Selection</span>
+          <span className="section-eyebrow">Artisanal Ceylon Harvest</span>
           <h2 className="section-title">Discover Our Premium Selection</h2>
           <p className="section-subtitle">
             Carefully curated and stone milled to honor the ancient island traditions of authentic Ceylon spice.

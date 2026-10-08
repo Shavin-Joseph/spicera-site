@@ -3,8 +3,7 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
-  sendPasswordResetEmail,
-  createUserWithEmailAndPassword
+  sendPasswordResetEmail
 } from 'firebase/auth';
 import { auth } from '../firebase/config';
 
@@ -83,24 +82,6 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  // First-time admin creation (useful when initializing a new project)
-  const registerInitialAdmin = async (email, password) => {
-    setAuthError('');
-    try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      return userCredential.user;
-    } catch (error) {
-      let message = error.message;
-      if (error.code === 'auth/email-already-in-use') {
-        message = 'This email is already registered. Please sign in instead.';
-      } else if (error.code === 'auth/weak-password') {
-        message = 'Password should be at least 6 characters.';
-      }
-      setAuthError(message);
-      throw new Error(message);
-    }
-  };
-
   // Reset password
   const resetPassword = async (email) => {
     setAuthError('');
@@ -124,7 +105,6 @@ export const AuthProvider = ({ children }) => {
     lockoutRemaining: lockoutTime ? Math.max(0, Math.ceil((lockoutTime - Date.now()) / 1000)) : 0,
     login,
     logout,
-    registerInitialAdmin,
     resetPassword,
     isAuthenticated: Boolean(currentUser)
   };

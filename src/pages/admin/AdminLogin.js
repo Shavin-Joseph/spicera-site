@@ -9,7 +9,6 @@ import {
   FaEyeSlash,
   FaArrowLeft,
   FaKey,
-  FaUserPlus,
   FaCheckCircle
 } from 'react-icons/fa';
 import { useAuth } from '../../context/AuthContext';
@@ -19,14 +18,13 @@ const AdminLogin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
-  const [isSetupMode, setIsSetupMode] = useState(false);
   const [isResetModalOpen, setIsResetModalOpen] = useState(false);
   const [resetEmail, setResetEmail] = useState('');
   const [resetStatus, setResetStatus] = useState(null);
   const [errorMsg, setErrorMsg] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const { login, registerInitialAdmin, resetPassword, lockoutRemaining, authError } = useAuth();
+  const { login, resetPassword, lockoutRemaining, authError } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -43,11 +41,7 @@ const AdminLogin = () => {
 
     setIsSubmitting(true);
     try {
-      if (isSetupMode) {
-        await registerInitialAdmin(email, password);
-      } else {
-        await login(email, password);
-      }
+      await login(email, password);
       navigate(redirectPath, { replace: true });
     } catch (err) {
       setErrorMsg(err.message || 'Authentication error.');
@@ -87,11 +81,9 @@ const AdminLogin = () => {
             <FaShieldAlt />
           </div>
 
-          <h2>{isSetupMode ? 'Admin Account Setup' : 'Administrator Portal'}</h2>
+          <h2>Administrator Portal</h2>
           <p className="login-subtitle">
-            {isSetupMode
-              ? 'Initialize the master administrator account for Spicera'
-              : 'Secure authentication for catalog management & orders'}
+            Secure authentication for catalog management and orders
           </p>
         </div>
 
@@ -132,22 +124,20 @@ const AdminLogin = () => {
           <div className="form-field-group">
             <div className="password-label-row">
               <label htmlFor="admin-password">Password</label>
-              {!isSetupMode && (
-                <button
-                  type="button"
-                  className="forgot-password-link"
-                  onClick={() => setIsResetModalOpen(true)}
-                >
-                  Forgot?
-                </button>
-              )}
+              <button
+                type="button"
+                className="forgot-password-link"
+                onClick={() => setIsResetModalOpen(true)}
+              >
+                Forgot?
+              </button>
             </div>
             <div className="input-with-icon">
               <FaKey className="field-icon" />
               <input
                 id="admin-password"
                 type={showPassword ? 'text' : 'password'}
-                autoComplete={isSetupMode ? 'new-password' : 'current-password'}
+                autoComplete="current-password"
                 placeholder="••••••••••••"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -173,10 +163,6 @@ const AdminLogin = () => {
           >
             {isSubmitting ? (
               <span className="spinner-inline"></span>
-            ) : isSetupMode ? (
-              <>
-                <FaUserPlus /> Create Master Admin
-              </>
             ) : (
               <>
                 <FaLock /> Authenticate & Access
@@ -189,32 +175,6 @@ const AdminLogin = () => {
           <div className="encryption-notice">
             <FaCheckCircle className="safe-icon" />
             <span>Firebase Auth SSL 256 bit Encrypted</span>
-          </div>
-
-          <div className="setup-toggle-row">
-            {isSetupMode ? (
-              <button
-                type="button"
-                className="setup-toggle-btn"
-                onClick={() => {
-                  setIsSetupMode(false);
-                  setErrorMsg('');
-                }}
-              >
-                Already initialized? Sign In instead
-              </button>
-            ) : (
-              <button
-                type="button"
-                className="setup-toggle-btn"
-                onClick={() => {
-                  setIsSetupMode(true);
-                  setErrorMsg('');
-                }}
-              >
-                Need first-time admin setup? Click here
-              </button>
-            )}
           </div>
         </div>
       </motion.div>
